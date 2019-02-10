@@ -12,6 +12,7 @@
 		044B7A11220BEA53008F35A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044B7A0F220BEA53008F35A7 /* Main.storyboard */; };
 		044B7A13220BEA53008F35A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B7A12220BEA53008F35A7 /* Assets.xcassets */; };
 		044B7A16220BEA53008F35A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044B7A14220BEA53008F35A7 /* LaunchScreen.storyboard */; };
+		0670D9D0BA85A8D80F47AD0B /* Pods_RxTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4C8B2658B082631C0B2858 /* Pods_RxTableView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		044B7A12220BEA53008F35A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044B7A15220BEA53008F35A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044B7A17220BEA53008F35A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ECC48AEB6105CF10B44BB04 /* Pods-RxTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTableView/Pods-RxTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		7D4C8B2658B082631C0B2858 /* Pods_RxTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9746457567BEB47AC15EC374 /* Pods-RxTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTableView/Pods-RxTableView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0670D9D0BA85A8D80F47AD0B /* Pods_RxTableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				044B7A0A220BEA53008F35A7 /* RxTableView */,
 				044B7A09220BEA53008F35A7 /* Products */,
+				12555F904A37CFE8428CD5E4 /* Pods */,
+				76DC5C6786F2772CEA219BB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = RxTableView;
 			sourceTree = "<group>";
 		};
+		12555F904A37CFE8428CD5E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0ECC48AEB6105CF10B44BB04 /* Pods-RxTableView.debug.xcconfig */,
+				9746457567BEB47AC15EC374 /* Pods-RxTableView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76DC5C6786F2772CEA219BB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C8B2658B082631C0B2858 /* Pods_RxTableView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044B7A1A220BEA53008F35A7 /* Build configuration list for PBXNativeTarget "RxTableView" */;
 			buildPhases = (
+				986D34E5CDC01439038D5A89 /* [CP] Check Pods Manifest.lock */,
 				044B7A04220BEA53008F35A7 /* Sources */,
 				044B7A05220BEA53008F35A7 /* Frameworks */,
 				044B7A06220BEA53008F35A7 /* Resources */,
+				F85460F24B923C3F81582D6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		986D34E5CDC01439038D5A89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxTableView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F85460F24B923C3F81582D6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxTableView/Pods-RxTableView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTableView/Pods-RxTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		044B7A04220BEA53008F35A7 /* Sources */ = {
@@ -272,6 +339,7 @@
 		};
 		044B7A1B220BEA53008F35A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ECC48AEB6105CF10B44BB04 /* Pods-RxTableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +355,7 @@
 		};
 		044B7A1C220BEA53008F35A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9746457567BEB47AC15EC374 /* Pods-RxTableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
